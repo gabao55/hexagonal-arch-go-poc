@@ -1,11 +1,11 @@
 package application
 
 type ProductService struct {
-	productPersistence ProductPersistenceInterface
+	ProductPersistence ProductPersistenceInterface
 }
 
 func (s *ProductService) Get(id string) (ProductInterface, error) {
-	product, err := s.productPersistence.Get(id)
+	product, err := s.ProductPersistence.Get(id)
 	if err != nil {
 		return nil, err
 	}
@@ -21,7 +21,7 @@ func (s *ProductService) Create(name string, price float64) (ProductInterface, e
 		return &Product{}, err
 	}
 
-	result, err := s.productPersistence.Save(product)
+	result, err := s.ProductPersistence.Save(product)
 	if err != nil {
 		return nil, err
 	}
@@ -34,7 +34,7 @@ func (s *ProductService) Enable(product ProductInterface) (ProductInterface, err
 		return &Product{}, err
 	}
 
-	result, err := s.productPersistence.Save(product)
+	result, err := s.ProductPersistence.Save(product)
 	if err != nil {
 		return &Product{}, err
 	}
@@ -48,7 +48,7 @@ func (s *ProductService) Disable(product ProductInterface) (ProductInterface, er
 		return &Product{}, err
 	}
 
-	result, err := s.productPersistence.Save(product)
+	result, err := s.ProductPersistence.Save(product)
 	if err != nil {
 		return &Product{}, err
 	}
@@ -62,7 +62,7 @@ func (s *ProductService) Save(product ProductInterface) (ProductInterface, error
 		return nil, err
 	}
 
-	product, err = s.productPersistence.Save(product)
+	product, err = s.ProductPersistence.Save(product)
 	if err != nil {
 		return nil, err
 	}
