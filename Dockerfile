@@ -1,7 +1,9 @@
-FROM golang:1.17
+FROM golang:1.19
 
 WORKDIR /go/src
 ENV PATH="/go/bin:${PATH}"
+
+RUN go mod init github.com/gabao55/hexagonal-arch-go
 
 RUN go get -u github.com/spf13/cobra@latest && \
     go install github.com/golang/mock/mockgen@v1.5.0 && \
