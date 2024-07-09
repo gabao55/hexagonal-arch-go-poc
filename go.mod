@@ -1,6 +1,10 @@
 module github.com/gabao55/hexagonal-arch-go
 
+<<<<<<< HEAD
 go 1.19
+=======
+go 1.17
+>>>>>>> 70b1ba2d47e25bfab532605e95dbd07381f3bafe
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
